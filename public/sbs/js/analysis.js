@@ -1,5 +1,5 @@
 (function () {
-    var APP_ID = '75771';
+    var APP_ID = '92303';
     let token = localStorage.getItem('authToken');
     let CURRENCY;
     let SLIDE_SIDE = 'right';
