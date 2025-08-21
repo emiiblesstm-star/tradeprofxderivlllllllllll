@@ -11,13 +11,13 @@ import './freebots.scss';
 // Import the XML files directly
 import x1 from './bot-files/AUTO wealth mine AI PREMIUM.xml'; // Correct the import statement
 import x2 from './bot-files/Emiisdtrader VIP.xml';
-import x3 from './bot-files/🔥 ProfitMax Apex Trader 🚀📊✨.xml';
-import x4 from './bot-files/🔹 ProfitMax 1$ System 💰🤖.xml';
+import x3 from './bot-files/Emiisdtrader expert 🚀📊.xml';
+import x4 from './bot-files/Emiisdtrader 1$ System 💰.xml';
 import x5 from './bot-files/🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml';
 import x6 from './bot-files/🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml';
 import x7 from './bot-files/🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄.xml';
 import x8 from './bot-files/🧠📊🔍 ProfitMax Fusion Analyzer™.xml';
-import x9 from './bot-files/⚡ ProfitMax Encroach Trader 💵.xml';
+import x9 from './bot-files/Emiisdtrader Encroach Trader 💵.xml';
 import x10 from './bot-files/$Orginal DollarPrinterBot  2025 Version $.xml';
 import x11 from './bot-files/Alpha Version 2025.xml';
 import x12 from './bot-files/Updated Version Of Candle Mine🇬🇧.xml';
@@ -32,13 +32,13 @@ const FreeBots = observer(() => {
     const botXmlMap: Record<string, string> = {
         'AUTO wealth mine AI PREMIUM.xml': x1,
         'Emiisdtrader VIP.xml': x2,
-        '🔥 ProfitMax Apex Trader 🚀📊✨.xml': x3,
-        '🔹 ProfitMax 1$ System 💰🤖.xml': x4,
+        'Emiisdtrader expert 🚀📊.xml': x3,
+        'Emiisdtrader 1$ System 💰.xml': x4,
         '🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml': x5,
         '🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml': x6,
         '🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄.xml': x7,
         '🧠📊🔍 ProfitMax Fusion Analyzer™.xml': x8,
-        '⚡ ProfitMax Encroach Trader 💵.xml': x9,
+        'Emiisdtrader Encroach Trader 💵.xml': x9,
         '$Orginal DollarPrinterBot  2025 Version $.xml': x10,
         'Alpha Version 2025.xml': x11,
         'Updated Version Of Candle Mine🇬🇧.xml': x12,
@@ -58,15 +58,15 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: '🔥 ProfitMax Apex Trader 🚀📊✨',
-            description: '🔥 ProfitMax Apex Trader 🚀📊✨',
-            file: '🔥 ProfitMax Apex Trader 🚀📊✨.xml',
+            name: 'Emiisdtrader expert 🚀📊',
+            description: 'Emiisdtrader expert 🚀📊',
+            file: 'Emiisdtrader expert 🚀📊.xml',
             icon: '🤖',
         },
         {
-            name: '🔹 ProfitMax 1$ System 💰🤖',
-            description: '🔹 ProfitMax 1$ System 💰🤖',
-            file: '🔹 ProfitMax 1$ System 💰🤖.xml',
+            name: 'Emiisdtrader 1$ System 💰',
+            description: 'Emiisdtrader 1$ System 💰',
+            file: 'Emiisdtrader 1$ System 💰.xml',
             icon: '🤖',
         },
         {
@@ -94,9 +94,9 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: '⚡ ProfitMax Encroach Trader 💵',
-            description: '⚡ ProfitMax Encroach Trader 💵',
-            file: '⚡ ProfitMax Encroach Trader 💵.xml',
+            name: 'Emiisdtrader Encroach Trader 💵',
+            description: 'Emiisdtrader Encroach Trader 💵',
+            file: 'Emiisdtrader Encroach Trader 💵.xml',
             icon: '🤖',
         },
         {

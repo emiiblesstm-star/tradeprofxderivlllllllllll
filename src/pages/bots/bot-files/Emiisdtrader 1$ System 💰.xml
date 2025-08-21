@@ -61,7 +61,7 @@
     </statement>
     <statement name="INITIALIZATION">
       <block type="procedures_callnoreturn" id="eP/^XD=g@h_l8kgpnWV`">
-        <mutation xmlns="http://www.w3.org/1999/xhtml" name="🔹 ProfitMax 1$ System 💰🤖">
+        <mutation xmlns="http://www.w3.org/1999/xhtml" name="Emiisdtrader 1$ System 💰">
           <arg name="Target Profit"></arg>
           <arg name="Stop Loss"></arg>
           <arg name="First Stake"></arg>
@@ -156,7 +156,7 @@
     </statement>
   </block>
   <block type="procedures_callnoreturn" id="vzo!]3ykF}2Hp36DN=x/" disabled="true" x="0" y="866">
-    <mutation xmlns="http://www.w3.org/1999/xhtml" name="🔹 ProfitMax 1$ System 💰🤖">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" name="Emiisdtrader 1$ System 💰">
       <arg name="Target Profit"></arg>
       <arg name="Stop Loss"></arg>
       <arg name="First Stake"></arg>
@@ -197,7 +197,7 @@
     </value>
   </block>
   <block type="procedures_callnoreturn" id="oLme2Pw2dydCe-N)XId-" disabled="true" x="0" y="970">
-    <mutation xmlns="http://www.w3.org/1999/xhtml" name="🔹 ProfitMax 1$ System 💰🤖">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" name="Emiisdtrader 1$ System 💰">
       <arg name="Target Profit"></arg>
       <arg name="Stop Loss"></arg>
       <arg name="First Stake"></arg>
@@ -238,7 +238,7 @@
     </value>
   </block>
   <block type="procedures_callnoreturn" id="}12X9)N=@4n3U@.Z9X6s" disabled="true" x="0" y="1074">
-    <mutation xmlns="http://www.w3.org/1999/xhtml" name="🔹 ProfitMax 1$ System 💰🤖">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" name="Emiisdtrader 1$ System 💰">
       <arg name="Target Profit"></arg>
       <arg name="Stop Loss"></arg>
       <arg name="First Stake"></arg>
@@ -279,7 +279,7 @@
     </value>
   </block>
   <block type="procedures_callnoreturn" id="O0=kE3}}T*#5%;KgTzCO" disabled="true" x="0" y="1178">
-    <mutation xmlns="http://www.w3.org/1999/xhtml" name="🔹 ProfitMax 1$ System 💰🤖">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" name="Emiisdtrader 1$ System 💰">
       <arg name="Target Profit"></arg>
       <arg name="Stop Loss"></arg>
       <arg name="First Stake"></arg>
@@ -940,7 +940,7 @@
     </value>
   </block>
   <block type="procedures_callnoreturn" id="_)fv$gzfiKs^|?~K?y1T" disabled="true" x="0" y="1405">
-    <mutation xmlns="http://www.w3.org/1999/xhtml" name="🔹 ProfitMax 1$ System 💰🤖">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" name="Emiisdtrader 1$ System 💰">
       <arg name="Target Profit"></arg>
       <arg name="Stop Loss"></arg>
       <arg name="First Stake"></arg>
@@ -989,7 +989,7 @@
       <arg name="Martingale Level" varid="X#UMfnUF|OeyRcxIN~Y4"></arg>
       <arg name="Do Martingale After" varid="-sYH8a;P)v}g?!iatjL,"></arg>
     </mutation>
-    <field name="NAME">🔹 ProfitMax 1$ System 💰🤖</field>
+    <field name="NAME">Emiisdtrader 1$ System 💰</field>
     <comment pinned="false" h="200" w="200">Describe this function...</comment>
     <statement name="STACK">
       <block type="notify" id="-%6nFwy*F:aM*#k^1y7a">
