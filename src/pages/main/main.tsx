@@ -272,7 +272,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('💡Vip Analysis')} />
+                                    <Localize i18n_default_text={localize('Vip Analysis')} />
                                 </>
                             )}
                             id='id-analysis'
@@ -287,7 +287,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('🧲Pro Tools')} />
+                                    <Localize i18n_default_text={localize('Pro Tools')} />
                                 </>
                             )}
                             id='id-tool'
@@ -302,7 +302,7 @@ const AppWrapper = observer(() => {
                         {/*<div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('🤖Expert Bots')} />
+                                    <Localize i18n_default_text={localize('Expert Bots')} />
                                 </>
                             )}
                             id='id-bots'
@@ -317,7 +317,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('🤖Expert Bots')} />
+                                    <Localize i18n_default_text={localize('Expert Bots')} />
                                 </>
                             )}
                             id='id-bots'
@@ -336,7 +336,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('🤝 CopyTrade')} />
+                                    <Localize i18n_default_text={localize('CopyTrade')} />
                                 </>
                             )}
                             id='id-copy'
@@ -351,7 +351,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('🕹️ AI')} />
+                                    <Localize i18n_default_text={localize('AI premium')} />
                                 </>
                             )}
                             id='id-ai'
@@ -366,7 +366,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('📢 Signal')} />
+                                    <Localize i18n_default_text={localize('pro Signals')} />
                                 </>
                             )}
                             id='id-signal'
@@ -381,7 +381,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={(
                                 <>
-                                    <Localize i18n_default_text={localize('💼 Invest')} />
+                                    <Localize i18n_default_text={localize('Invest')} />
                                 </>
                             )}
                             id='id-invest'
