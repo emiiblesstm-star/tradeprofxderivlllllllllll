@@ -452,7 +452,7 @@
                                 <field name="TEXT">abc</field>
                               </shadow>
                               <block type="text" id="CUNyH5QrjQf*K:$R5:L|">
-                                <field name="TEXT">ProfitMax Stop Lose Reached</field>
+                                <field name="TEXT">Emiisdtrader Stop Lose Reached</field>
                               </block>
                             </value>
                           </block>
@@ -472,7 +472,7 @@
                                 <field name="TEXT"></field>
                               </shadow>
                               <block type="text" id="c?VlFBvCthBoo{l?kvIz">
-                                <field name="TEXT">ProfitMax Rise &amp; Fall Auto Switch</field>
+                                <field name="TEXT">Emiisdtrader Rise &amp; Fall Auto Switch</field>
                               </block>
                             </value>
                             <next>
