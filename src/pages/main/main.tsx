@@ -212,6 +212,39 @@ const AppWrapper = observer(() => {
                         >
                             <Dashboard handleTabChange={handleTabChange} />
                         </div>
+                     {/*<div
+                            label={(
+                                <>
+                                    <Localize i18n_default_text={localize('Expert Bots')} />
+                                </>
+                            )}
+                            id='id-bots'
+                            onClick={() => handleLinkChange('bots')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading Bots page...')} />}>
+                                <BotsPage />
+                            </Suspense>
+                        </div>*/}
+
+                        <div
+                            label={(
+                                <>
+                                    <Localize i18n_default_text={localize('Expert Bots')} />
+                                </>
+                            )}
+                            id='id-bots'
+                            onClick={() => handleLinkChange('bots')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading Bots page...')} />}>
+                                <BotsPage
+                                    onBotSelect={() => {
+                                        handleTabChange(DBOT_TABS.BOT_BUILDER);
+                                    }}
+                                />
+                            </Suspense>
+                        </div>
 
                         <div
                             label={(
@@ -299,39 +332,6 @@ const AppWrapper = observer(() => {
                             </Suspense>
                         </div>
 
-                        {/*<div
-                            label={(
-                                <>
-                                    <Localize i18n_default_text={localize('Expert Bots')} />
-                                </>
-                            )}
-                            id='id-bots'
-                            onClick={() => handleLinkChange('bots')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading Bots page...')} />}>
-                                <BotsPage />
-                            </Suspense>
-                        </div>*/}
-
-                        <div
-                            label={(
-                                <>
-                                    <Localize i18n_default_text={localize('Expert Bots')} />
-                                </>
-                            )}
-                            id='id-bots'
-                            onClick={() => handleLinkChange('bots')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading Bots page...')} />}>
-                                <BotsPage
-                                    onBotSelect={() => {
-                                        handleTabChange(DBOT_TABS.BOT_BUILDER);
-                                    }}
-                                />
-                            </Suspense>
-                        </div>
 
                         <div
                             label={(
