@@ -15,8 +15,8 @@ import x3 from './bot-files/Emiisdtrader expert 🚀📊.xml';
 import x4 from './bot-files/Emiisdtrader 1$ System 💰.xml';
 import x5 from './bot-files/🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml';
 import x6 from './bot-files/🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml';
-import x7 from './bot-files/🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄.xml';
-import x8 from './bot-files/🧠📊🔍 ProfitMax Fusion Analyzer™.xml';
+import x7 from './bot-files/Emiisdtrader Even_Odd Auto Switch 2025🔄.xml';
+import x8 from './bot-files/Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml';
 import x9 from './bot-files/Emiisdtrader Encroach Trader 💵.xml';
 import x10 from './bot-files/$Orginal DollarPrinterBot  2025 Version $.xml';
 import x11 from './bot-files/Alpha Version 2025.xml';
@@ -36,8 +36,8 @@ const FreeBots = observer(() => {
         'Emiisdtrader 1$ System 💰.xml': x4,
         '🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml': x5,
         '🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml': x6,
-        '🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄.xml': x7,
-        '🧠📊🔍 ProfitMax Fusion Analyzer™.xml': x8,
+        'Emiisdtrader Even_Odd Auto Switch 2025🔄.xml': x7,
+        'Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml': x8,
         'Emiisdtrader Encroach Trader 💵.xml': x9,
         '$Orginal DollarPrinterBot  2025 Version $.xml': x10,
         'Alpha Version 2025.xml': x11,
@@ -82,15 +82,15 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: 'x🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄xx',
-            description: '🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄',
-            file: '🤖🎯 The ProfitMax Even_Odd Auto Switch 2025™ 🔄.xml',
+            name: 'xEmiisdtrader Even_Odd Auto Switch 2025🔄xx',
+            description: 'Emiisdtrader Even_Odd Auto Switch 2025🔄',
+            file: 'Emiisdtrader Even_Odd Auto Switch 2025🔄.xml',
             icon: '🤖',
         },
         {
-            name: '🧠📊🔍 ProfitMax Fusion Analyzer™',
-            description: '🧠📊🔍 ProfitMax Fusion Analyzer™',
-            file: '🧠📊🔍 ProfitMax Fusion Analyzer™.xml',
+            name: 'Emiisdtrader Fusion Analyzer🔍🔍📊📊',
+            description: 'Emiisdtrader Fusion Analyzer🔍🔍📊📊',
+            file: 'Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml',
             icon: '🤖',
         },
         {
