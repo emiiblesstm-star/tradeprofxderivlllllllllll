@@ -13,14 +13,14 @@ import x1 from './bot-files/AUTO wealth mine AI PREMIUM.xml'; // Correct the imp
 import x2 from './bot-files/Emiisdtrader VIP.xml';
 import x3 from './bot-files/Emiisdtrader expert 🚀📊.xml';
 import x4 from './bot-files/Emiisdtrader 1$ System 💰.xml';
-import x5 from './bot-files/🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml';
-import x6 from './bot-files/🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml';
+import x5 from './bot-files/Emiisdtrader Fusion-X 2025.xml';
+import x6 from './bot-files/Emiisdtrader Rise & Fall Auto Switch 🔄📈📉.xml';
 import x7 from './bot-files/Emiisdtrader Even_Odd Auto Switch 2025🔄.xml';
 import x8 from './bot-files/Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml';
 import x9 from './bot-files/Emiisdtrader Encroach Trader 💵.xml';
-import x10 from './bot-files/$Orginal DollarPrinterBot  2025 Version $.xml';
+import x10 from './bot-files/New DollarPrinterBot  2025 Version 💰💰💰.xml';
 import x11 from './bot-files/Alpha Version 2025.xml';
-import x12 from './bot-files/Updated Version Of Candle Mine🇬🇧.xml';
+import x12 from './bot-files/Emiisdtrader Version Of Candle Mine🎯🎯.xml';
 
 const FreeBots = observer(() => {
     const { load_modal, dashboard, blockly_store } = useStore();
@@ -34,14 +34,14 @@ const FreeBots = observer(() => {
         'Emiisdtrader VIP.xml': x2,
         'Emiisdtrader expert 🚀📊.xml': x3,
         'Emiisdtrader 1$ System 💰.xml': x4,
-        '🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml': x5,
-        '🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml': x6,
+        'Emiisdtrader Fusion-X 2025.xml': x5,
+        'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉.xml': x6,
         'Emiisdtrader Even_Odd Auto Switch 2025🔄.xml': x7,
         'Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml': x8,
         'Emiisdtrader Encroach Trader 💵.xml': x9,
-        '$Orginal DollarPrinterBot  2025 Version $.xml': x10,
+        'New DollarPrinterBot  2025 Version 💰💰💰.xml': x10,
         'Alpha Version 2025.xml': x11,
-        'Updated Version Of Candle Mine🇬🇧.xml': x12,
+        'Emiisdtrader Version Of Candle Mine🎯🎯.xml': x12,
     };
 
     const bots = [
@@ -70,15 +70,15 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: '🚀 ProfitMax Fusion-X 🤖🌠™ 2025',
-            description: '🚀 ProfitMax Fusion-X 🤖🌠™ 2025',
-            file: '🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml',
+            name: 'Emiisdtrader Fusion-X 2025',
+            description: 'Emiisdtrader Fusion-X 2025',
+            file: 'Emiisdtrader Fusion-X 2025.xml',
             icon: '🤖',
         },
         {
-            name: '🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉',
-            description: '🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉',
-            file: '🚀 ProfitMax Rise & Fall Auto Switch 🔄📈📉.xml',
+            name: 'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉',
+            description: 'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉',
+            file: 'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉.xml',
             icon: '🤖',
         },
         {
@@ -100,9 +100,9 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: '$Orginal DollarPrinterBot  2025 Version $',
-            description: '$Orginal DollarPrinterBot  2025 Version $',
-            file: '$Orginal DollarPrinterBot  2025 Version $.xml',
+            name: 'New DollarPrinterBot  2025 Version 💰💰💰',
+            description: 'New DollarPrinterBot  2025 Version 💰💰💰',
+            file: 'New DollarPrinterBot  2025 Version 💰💰💰.xml',
             icon: '🤖',
         },
         {
@@ -112,9 +112,9 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: 'Updated Version Of Candle Mine🇬🇧',
-            description: 'Updated Version Of Candle Mine🇬🇧',
-            file: 'Updated Version Of Candle Mine🇬🇧.xml',
+            name: 'Emiisdtrader Version Of Candle Mine🎯🎯',
+            description: 'Emiisdtrader Version Of Candle Mine🎯🎯',
+            file: 'Emiisdtrader Version Of Candle Mine🎯🎯.xml',
             icon: '🤖',
         },
     ];
