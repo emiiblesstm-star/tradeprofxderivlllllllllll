@@ -9,7 +9,7 @@ import { Localize } from '@deriv-com/translations';
 import './freebots.scss';
 
 // Import the XML files directly
-import x1 from './bot-files/AUTO_wealth_mine_AI_PREMIUM.xml'; // Correct the import statement
+import x1 from './bot-files/Profit Max No Martngale FREE Bot.xml'; // Correct the import statement
 import x2 from './bot-files/ProfitMax Accu Bot Main.xml';
 import x3 from './bot-files/🔥 ProfitMax Apex Trader 🚀📊✨.xml';
 import x4 from './bot-files/🔹 ProfitMax 1$ System 💰🤖.xml';
@@ -30,7 +30,7 @@ const FreeBots = observer(() => {
 
     // Map filenames to their XML content
     const botXmlMap: Record<string, string> = {
-        'AUTO_wealth_mine_AI_PREMIUM.xml': x1,
+        'Profit Max No Martngale FREE Bot.xml': x1,
         'ProfitMax Accu Bot Main.xml': x2,
         '🔥 ProfitMax Apex Trader 🚀📊✨.xml': x3,
         '🔹 ProfitMax 1$ System 💰🤖.xml': x4,
@@ -46,9 +46,9 @@ const FreeBots = observer(() => {
 
     const bots = [
         {
-            name: 'AUTO_wealth_mine_AI_PREMIUM',
-            description: 'AUTO_wealth_mine_AI_PREMIUM',
-            file: 'AUTO_wealth_mine_AI_PREMIUM.xml',
+            name: 'Profit Max No Martngale FREE Bot',
+            description: 'Profit Max No Martngale FREE Bot',
+            file: 'Profit Max No Martngale FREE Bot.xml',
             icon: '🤖',
         },
         {
