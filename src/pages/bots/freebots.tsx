@@ -10,7 +10,7 @@ import './freebots.scss';
 
 // Import the XML files directly
 import x1 from './bot-files/AUTO wealth mine AI PREMIUM.xml'; // Correct the import statement
-import x2 from './bot-files/ProfitMax Accu Bot Main.xml';
+import x2 from './bot-files/Emiisdtrader VIP.xml';
 import x3 from './bot-files/🔥 ProfitMax Apex Trader 🚀📊✨.xml';
 import x4 from './bot-files/🔹 ProfitMax 1$ System 💰🤖.xml';
 import x5 from './bot-files/🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml';
@@ -31,7 +31,7 @@ const FreeBots = observer(() => {
     // Map filenames to their XML content
     const botXmlMap: Record<string, string> = {
         'AUTO wealth mine AI PREMIUM.xml': x1,
-        'ProfitMax Accu Bot Main.xml': x2,
+        'Emiisdtrader VIP.xml': x2,
         '🔥 ProfitMax Apex Trader 🚀📊✨.xml': x3,
         '🔹 ProfitMax 1$ System 💰🤖.xml': x4,
         '🚀 ProfitMax Fusion-X 🤖🌠™ 2025.xml': x5,
@@ -52,9 +52,9 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: 'ProfitMax Accu Bot Main',
-            description: 'ProfitMax Accu Bot Main',
-            file: 'ProfitMax Accu Bot Main.xml',
+            name: 'Emiisdtrader VIP',
+            description: 'Emiisdtrader VIP',
+            file: 'Emiisdtrader VIP.xml',
             icon: '🤖',
         },
         {
