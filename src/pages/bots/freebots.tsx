@@ -208,7 +208,7 @@ const FreeBots = observer(() => {
             <div className='free-bots__header'>
                 <LabelPairedMoonCaptionRegularIcon height='32px' width='32px' fill='var(--button-primary-default)' />
                 <h1>Free Trading Bots</h1>
-                <p>Select any of Automated profitable bots</p>
+                <p>Select any of our Automated profitable bots</p>
             </div>
             {loadError && (
                 <div className='free-bots__error-message'>
