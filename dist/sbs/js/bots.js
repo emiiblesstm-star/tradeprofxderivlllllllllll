@@ -1,1 +1,0 @@
-document.querySelectorAll(".bot-card").forEach(e=>{e.addEventListener("click",()=>{let t=e.querySelector(".bot-title").textContent;console.log(`Clicked bot: ${t}`);let l=document.getElementById("navbar");if(l){let e=Array.from(l.querySelectorAll(".nav-item")).find(e=>e.textContent.includes("AI Bots"));e&&e.click()}})});

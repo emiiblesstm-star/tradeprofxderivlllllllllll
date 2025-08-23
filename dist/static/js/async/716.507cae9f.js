@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbot=self.webpackChunkbot||[]).push([["716"],{18725:function(e,s,t){t.r(s),t.d(s,{default:()=>c});var n=t(85893);t(67294);let c=()=>(0,n.jsx)("div",{children:(0,n.jsx)("h1",{children:"Invest"})})}}]);
