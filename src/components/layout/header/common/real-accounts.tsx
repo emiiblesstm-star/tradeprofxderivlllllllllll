@@ -21,13 +21,13 @@ const RealAccounts = ({
     loginid,
     is_logging_out,
     upgradeable_landing_companies,
+    residence,
 }: TRealAccounts) => {
-    const upgradeable_landing_company_shortcode = upgradeable_landing_companies?.[0];
     const hasNonEuAccounts = modifiedCRAccountList && modifiedCRAccountList?.length > 0;
     const hasEuAccounts = modifiedMFAccountList && modifiedMFAccountList?.length > 0;
 
-    const getAccountTitle = (upgradeable_landing_company_shortcode: string) => {
-        switch (upgradeable_landing_company_shortcode) {
+    const getAccountTitle = (upgradeable_landing_companies: string) => {
+        switch (upgradeable_landing_companies) {
             case 'svg':
                 return localize('Options & Multipliers');
             case 'maltainvest':
@@ -56,23 +56,24 @@ const RealAccounts = ({
                         is_low_risk_country={is_low_risk_country}
                         isVirtual={isVirtual}
                         tabs_labels={tabs_labels}
+                        residence={residence}
                     />
                     <AccountSwitcherDivider />
                 </>
             )}
-            {!hasNonEuAccounts && !hasEuAccounts && upgradeable_landing_company_shortcode && (
-                <div key={upgradeable_landing_company_shortcode} className='real-accounts__account-item'>
+            {!hasNonEuAccounts && !hasEuAccounts && upgradeable_landing_companies && (
+                <div key={upgradeable_landing_companies} className='real-accounts__account-item'>
                     <div className='real-accounts__account-item-left'>
                         <Icon icon='ic-deriv' className='deriv-account-switcher-item__icon' />
                         <span className='real-accounts__account-item-left-text'>
-                            {getAccountTitle(upgradeable_landing_company_shortcode ?? '')}
+                            {getAccountTitle(upgradeable_landing_companies ?? '')}
                         </span>
                     </div>
                     <button
                         className='add-button'
                         onClick={() => {
                             const baseUrl = getBaseTraderHubUrl();
-                            const redirectUrl = `${baseUrl}/tradershub/redirect?action=real-account-signup&target=${upgradeable_landing_company_shortcode}`;
+                            const redirectUrl = `${baseUrl}/tradershub/redirect?action=real-account-signup&target=${upgradeable_landing_companies}`;
                             window.location.href = redirectUrl;
                         }}
                     >
@@ -94,7 +95,13 @@ const RealAccounts = ({
                     <AccountSwitcherDivider />
                 </>
             )}
-            <AccountSwitcherFooter oAuthLogout={oAuthLogout} loginid={loginid} is_logging_out={is_logging_out} />
+            <AccountSwitcherFooter
+                oAuthLogout={oAuthLogout}
+                loginid={loginid}
+                is_logging_out={is_logging_out}
+                residence={residence}
+                type='real'
+            />
         </>
     );
 };

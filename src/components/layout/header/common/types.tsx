@@ -43,6 +43,7 @@ export type TNoNonEuAccounts = {
         real: string;
     };
     is_low_risk_country: boolean;
+    residence?: string;
 };
 export type TRealAccounts = TNoNonEuAccounts & {
     modifiedCRAccountList: TModifiedAccount[];
@@ -51,7 +52,8 @@ export type TRealAccounts = TNoNonEuAccounts & {
     oAuthLogout: () => void;
     loginid?: string;
     is_logging_out: boolean;
-    upgradeable_landing_companies?: string[] | null;
+    upgradeable_landing_companies?: string | null;
+    residence?: string;
 };
 export type TEuAccounts = TNoNonEuAccounts & {
     modifiedMFAccountList: TModifiedAccount[];
@@ -65,10 +67,12 @@ export type TNonEUAccounts = TNoNonEuAccounts & {
     modifiedCRAccountList: TModifiedAccount[];
     modifiedMFAccountList?: TModifiedAccount[];
     switchAccount: (loginId: number) => void;
+    residence?: string;
 };
 
 export type TAccountSwitcherFooter = {
     oAuthLogout: () => void;
     loginid?: string;
     is_logging_out: boolean;
+    residence?: string;
 };

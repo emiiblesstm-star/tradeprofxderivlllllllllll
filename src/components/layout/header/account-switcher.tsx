@@ -9,6 +9,7 @@ import { useOauth2 } from '@/hooks/auth/useOauth2';
 import { useApiBase } from '@/hooks/useApiBase';
 import { useStore } from '@/hooks/useStore';
 import { waitForDomElement } from '@/utils/dom-observer';
+import { Analytics } from '@deriv-com/analytics';
 import { localize } from '@deriv-com/translations';
 import { AccountSwitcher as UIAccountSwitcher, Loader, useDevice } from '@deriv-com/ui';
 import DemoAccounts from './common/demo-accounts';
@@ -36,6 +37,7 @@ const RenderAccountItems = ({
     const { oAuthLogout } = useOauth2({ handleLogout: async () => client.logout(), client });
     const is_low_risk_country = LOW_RISK_COUNTRIES().includes(client.account_settings?.country_code ?? '');
     const is_virtual = !!isVirtual;
+    const residence = client.residence;
 
     useEffect(() => {
         // Update the max-height from the accordion content set from deriv-com/ui
@@ -77,7 +79,8 @@ const RenderAccountItems = ({
                 oAuthLogout={oAuthLogout}
                 loginid={activeLoginId}
                 is_logging_out={client.is_logging_out}
-                upgradeable_landing_companies={client.upgradeable_landing_companies ?? null}
+                upgradeable_landing_companies={client?.landing_companies?.all_company ?? null}
+                residence={residence}
             />
         );
     }
@@ -139,12 +142,22 @@ const AccountSwitcher = observer(({ activeAccount }: TAccountSwitcher) => {
         if (!token) return;
         localStorage.setItem('authToken', token);
         localStorage.setItem('active_loginid', loginId.toString());
+        const account_type =
+            loginId
+                .toString()
+                .match(/[a-zA-Z]+/g)
+                ?.join('') || '';
+
+        Analytics.setAttributes({
+            account_type,
+        });
         await api_base?.init(true);
         const search_params = new URLSearchParams(window.location.search);
         const selected_account = modifiedAccountList.find(acc => acc.loginid === loginId.toString());
         if (!selected_account) return;
         const account_param = selected_account.is_virtual ? 'demo' : selected_account.currency;
         search_params.set('account', account_param);
+        sessionStorage.setItem('query_param_currency', account_param);
         window.history.pushState({}, '', `${window.location.pathname}?${search_params.toString()}`);
     };
 
