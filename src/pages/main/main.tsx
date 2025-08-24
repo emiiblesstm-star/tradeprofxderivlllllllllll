@@ -43,10 +43,6 @@ const CopyTrading = lazy(() => import('../copy-trading'));
 const SmartTrader = lazy(() => import('../smart-trader'));
 const Dtrader = lazy(() => import('../dtrader'));
 const FreeBots = lazy(() => import('../free-bots/free-bots.tsx')); // Assuming you created free-bots.tsx
-const Analysis = lazy(() => import('../analysis/analysis'));
-const Tool = lazy(() => import('../tool/tool'));
-const Copy = lazy(() => import('../copy/copy'));
-const AiPage = lazy(() => import('../ai/ai')); // Assuming you created AiPage.tsx
 
 const AppWrapper = observer(() => {
     const { connectionStatus } = useApiBase();
@@ -78,7 +74,7 @@ const AppWrapper = observer(() => {
     const { clear } = summary_card;
     const { DASHBOARD, BOT_BUILDER } = DBOT_TABS;
     const init_render = React.useRef(true);
-    const hash = ['dashboard', 'bot_builder', 'chart', 'free_bots', 'copy_trading', 'smart_trader', 'dtrader', 'analysis', 'tool', 'ai', 'signal',];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'free_bots', 'copy_trading', 'smart_trader', 'dtrader'];
     const { isDesktop } = useDevice();
     const location = useLocation();
     const navigate = useNavigate();
@@ -417,73 +413,10 @@ const AppWrapper = observer(() => {
                                     <Signals />
                                 </Suspense>
                             </div>
-                         </div>
-
-                         {/* Add links to new AI, Bots, Signal, and Invest pages */}
-                        <div
-                            label={(
-                                <>
-                                    <Localize i18n_default_text={localize('Vip Analysis')} />
-                                </>
-                            )}
-                            id='id-analysis'
-                            onClick={() => handleLinkChange('analysis')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading page...')} />}>
-                                <Analysis />
-                            </Suspense>
-                        </div>
-
-                        <div
-                            label={(
-                                <>
-                                    <Localize i18n_default_text={localize('Pro Tools')} />
-                                </>
-                            )}
-                            id='id-tool'
-                            onClick={() => handleLinkChange('tool')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading  page...')} />}>
-                                <Tool />
-                            </Suspense>
-                        </div>
-
-
-                        <div
-                            label={(
-                                <>
-                                    <Localize i18n_default_text={localize('CopyTrade')} />
-                                </>
-                            )}
-                            id='id-copy'
-                            onClick={() => handleLinkChange('copy')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading  page...')} />}>
-                                <Copy />
-                            </Suspense>
-                        </div>
-
-                        <div
-                            label={(
-                                <>
-                                    <Localize i18n_default_text={localize('AI premium')} />
-                                </>
-                            )}
-                            id='id-ai'
-                            onClick={() => handleLinkChange('ai')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading AI page...')} />}>
-                                <AiPage />
-                            </Suspense>
-                        </div>
-                    </Tabs>
+                        </Tabs>
+                    </div>
                 </div>
             </div>
-
             <DesktopWrapper>
                 <div className='main__run-strategy-wrapper'>
                     <RunStrategy />
