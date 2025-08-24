@@ -42,8 +42,7 @@ const Signals = lazy(() => import('../signals'));
 const CopyTrading = lazy(() => import('../copy-trading'));
 const SmartTrader = lazy(() => import('../smart-trader'));
 const Dtrader = lazy(() => import('../dtrader'));
-// Import FreeBots directly instead of lazy loading for faster access
-import FreeBots from '../free-bots';
+const FreeBots = lazy(() => import('../free-bots/free-bots.tsx')); // Assuming you created free-bots.tsx
 
 const AppWrapper = observer(() => {
     const { connectionStatus } = useApiBase();
