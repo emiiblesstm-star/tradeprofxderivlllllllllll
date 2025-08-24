@@ -9,15 +9,18 @@ import { Localize } from '@deriv-com/translations';
 import './freebots.scss';
 
 // Import the XML files directly
-import x1 from 'src/pages/free-bots/bot-files/AUTO_wealth_mine_AI_PREMIUM.xml'; // Correct the import statement
-import x2 from 'src/pages/free-bots/bot-files/Rise & Fall Auto Switch.xml';
-import x3 from 'src/pages/free-bots/bot-files/Emiisdtrader VIP.xml';
-import x4 from 'src/pages/free-bots/bot-files/Emiisdtrader Fusion Analyzer.xml';
-import x5 from 'src/pages/free-bots/bot-files/Emiisdtrader Even_Odd Auto Switch.xml';
-import x6 from 'src/pages/free-bots/bot-files/DollarPrinterBot  2025 Version.xml';
-import x7 from 'src/pages/free-bots/bot-files/Alpha Version 2025.xml';
-import x8 from 'src/pages/free-bots/bot-files/Accumulators Bot Main.xml';
-import x9 from 'src/pages/free-bots/bot-files/ Martingale Bot.xml'
+import x1 from './bot-files/AUTO wealth mine AI PREMIUM.xml'; // Correct the import statement
+import x2 from './bot-files/Emiisdtrader VIP.xml';
+import x3 from './bot-files/Emiisdtrader expert 🚀📊.xml';
+import x4 from './bot-files/Emiisdtrader 1$ System 💰.xml';
+import x5 from './bot-files/Emiisdtrader Fusion-X 2025.xml';
+import x6 from './bot-files/Emiisdtrader Rise & Fall Auto Switch 🔄📈📉.xml';
+import x7 from './bot-files/Emiisdtrader Even_Odd Auto Switch 2025🔄.xml';
+import x8 from './bot-files/Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml';
+import x9 from './bot-files/Emiisdtrader Encroach Trader 💵.xml';
+import x10 from './bot-files/New DollarPrinterBot  2025 Version 💰💰💰.xml';
+import x11 from './bot-files/Alpha Version 2025.xml';
+import x12 from './bot-files/Emiisdtrader Version Of Candle Mine🎯🎯.xml';
 
 const FreeBots = observer(() => {
     const { load_modal, dashboard, blockly_store } = useStore();
@@ -27,28 +30,25 @@ const FreeBots = observer(() => {
 
     // Map filenames to their XML content
     const botXmlMap: Record<string, string> = {
-        'AUTO_wealth_mine_AI_PREMIUM.xml': x1,
-        'Rise & Fall Auto Switch.xml': x2,
-        'Emiisdtrader VIP.xml': x3,
-        'Emiisdtrader Fusion Analyzer.xml': x4,
-        'Emiisdtrader Even_Odd Auto Switch.xml': x5,
-        'DollarPrinterBot  2025 Version.xml': x6,
-        'Alpha Version 2025.xml': x7,
-        'Accumulators Bot Main.xml': x8,
-        'Martingale Bot.xml': x9,
+        'AUTO wealth mine AI PREMIUM.xml': x1,
+        'Emiisdtrader VIP.xml': x2,
+        'Emiisdtrader expert 🚀📊.xml': x3,
+        'Emiisdtrader 1$ System 💰.xml': x4,
+        'Emiisdtrader Fusion-X 2025.xml': x5,
+        'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉.xml': x6,
+        'Emiisdtrader Even_Odd Auto Switch 2025🔄.xml': x7,
+        'Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml': x8,
+        'Emiisdtrader Encroach Trader 💵.xml': x9,
+        'New DollarPrinterBot  2025 Version 💰💰💰.xml': x10,
+        'Alpha Version 2025.xml': x11,
+        'Emiisdtrader Version Of Candle Mine🎯🎯.xml': x12,
     };
 
     const bots = [
         {
-            name: 'AUTO_wealth_mine_AI_PREMIUM.xml',
-            description: 'AUTO_wealth_mine_AI_PREMIUM',
-            file: 'AUTO_wealth_mine_AI_PREMIUM',
-            icon: '🤖',
-        },
-        {
-            name: 'Rise & Fall Auto Switch',
-            description: 'Rise & Fall Auto Switch',
-            file: 'Rise & Fall Auto Switch.xml',
+            name: 'AUTO wealth mine AI PREMIUM',
+            description: 'AUTO wealth mine AI PREMIUM',
+            file: 'AUTO wealth mine AI PREMIUM.xml',
             icon: '🤖',
         },
         {
@@ -58,21 +58,51 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: 'Emiisdtrader Fusion Analyzer',
-            description: 'Emiisdtrader Fusion Analyzer',
-            file: 'Emiisdtrader Fusion Analyzer.xml',
+            name: 'Emiisdtrader expert 🚀📊',
+            description: 'Emiisdtrader expert 🚀📊',
+            file: 'Emiisdtrader expert 🚀📊.xml',
             icon: '🤖',
         },
         {
-            name: 'Emiisdtrader Even_Odd Auto Switch',
-            description: 'Emiisdtrader Even_Odd Auto Switch',
-            file: 'Emiisdtrader Even_Odd Auto Switch.xml',
+            name: 'Emiisdtrader 1$ System 💰',
+            description: 'Emiisdtrader 1$ System 💰',
+            file: 'Emiisdtrader 1$ System 💰.xml',
             icon: '🤖',
         },
         {
-            name: 'DollarPrinterBot  2025 Version',
-            description: 'DollarPrinterBot  2025 Version',
-            file: 'DollarPrinterBot  2025 Version.xml',
+            name: 'Emiisdtrader Fusion-X 2025',
+            description: 'Emiisdtrader Fusion-X 2025',
+            file: 'Emiisdtrader Fusion-X 2025.xml',
+            icon: '🤖',
+        },
+        {
+            name: 'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉',
+            description: 'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉',
+            file: 'Emiisdtrader Rise & Fall Auto Switch 🔄📈📉.xml',
+            icon: '🤖',
+        },
+        {
+            name: 'xEmiisdtrader Even_Odd Auto Switch 2025🔄xx',
+            description: 'Emiisdtrader Even_Odd Auto Switch 2025🔄',
+            file: 'Emiisdtrader Even_Odd Auto Switch 2025🔄.xml',
+            icon: '🤖',
+        },
+        {
+            name: 'Emiisdtrader Fusion Analyzer🔍🔍📊📊',
+            description: 'Emiisdtrader Fusion Analyzer🔍🔍📊📊',
+            file: 'Emiisdtrader Fusion Analyzer🔍🔍📊📊.xml',
+            icon: '🤖',
+        },
+        {
+            name: 'Emiisdtrader Encroach Trader 💵',
+            description: 'Emiisdtrader Encroach Trader 💵',
+            file: 'Emiisdtrader Encroach Trader 💵.xml',
+            icon: '🤖',
+        },
+        {
+            name: 'New DollarPrinterBot  2025 Version 💰💰💰',
+            description: 'New DollarPrinterBot  2025 Version 💰💰💰',
+            file: 'New DollarPrinterBot  2025 Version 💰💰💰.xml',
             icon: '🤖',
         },
         {
@@ -82,18 +112,11 @@ const FreeBots = observer(() => {
             icon: '🤖',
         },
         {
-            name: 'Accumulators Bot Main',
-            description: 'Accumulators Bot Main',
-            file: 'Accumulators Bot Main.xml',
+            name: 'Emiisdtrader Version Of Candle Mine🎯🎯',
+            description: 'Emiisdtrader Version Of Candle Mine🎯🎯',
+            file: 'Emiisdtrader Version Of Candle Mine🎯🎯.xml',
             icon: '🤖',
         },
-        {
-            name: 'Martingale Bot',
-            description: 'Martingale Bot',
-            file: 'Martingale Bot.xml',
-            icon: '🤖',
-        },
-       
     ];
 
     const handleBotSelect = (filename: string, botIndex: number) => {
@@ -184,8 +207,8 @@ const FreeBots = observer(() => {
         <div className='free-bots'>
             <div className='free-bots__header'>
                 <LabelPairedMoonCaptionRegularIcon height='32px' width='32px' fill='var(--button-primary-default)' />
-                <h1>Free Trading Bots</h1>
-                <p>Select from our collection of high-performance trading bots</p>
+                <h1>Free  Automated Bots</h1>
+                <p>Select any of our Automated profitable bots</p>
             </div>
             {loadError && (
                 <div className='free-bots__error-message'>
