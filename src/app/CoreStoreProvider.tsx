@@ -8,10 +8,23 @@ import { api_base } from '@/external/bot-skeleton';
 import { useOauth2 } from '@/hooks/auth/useOauth2';
 import { useApiBase } from '@/hooks/useApiBase';
 import { useStore } from '@/hooks/useStore';
+import useTMB from '@/hooks/useTMB';
 import { TLandingCompany, TSocketResponseData } from '@/types/api-types';
 import { useTranslations } from '@deriv-com/translations';
 
+type TClientInformation = {
+    loginid?: string;
+    email?: string;
+    currency?: string;
+    residence?: string | null;
+    first_name?: string;
+    last_name?: string;
+    preferred_language?: string | null;
+    user_id?: number | string;
+    landing_company_shortcode?: string;
+};
 const CoreStoreProvider: React.FC<{ children: React.ReactNode }> = observer(({ children }) => {
+    const currentDomain = useMemo(() => '.' + window.location.hostname.split('.').slice(-2).join('.'), []);
     const { isAuthorizing, isAuthorized, connectionStatus, accountList, activeLoginid } = useApiBase();
 
     const appInitialization = useRef(false);
@@ -24,7 +37,14 @@ const CoreStoreProvider: React.FC<{ children: React.ReactNode }> = observer(({ c
 
     const { oAuthLogout } = useOauth2({ handleLogout: async () => client.logout(), client });
 
-    const isLoggedOutCookie = Cookies.get('logged_state') === 'false';
+    const { is_tmb_enabled: tmb_enabled_from_hook } = useTMB();
+
+    const is_tmb_enabled = useMemo(
+        () => window.is_tmb_enabled === true || tmb_enabled_from_hook,
+        [tmb_enabled_from_hook]
+    );
+
+    const isLoggedOutCookie = Cookies.get('logged_state') === 'false' && !is_tmb_enabled;
 
     useEffect(() => {
         if (isLoggedOutCookie && client?.is_logged_in) {
@@ -73,6 +93,7 @@ const CoreStoreProvider: React.FC<{ children: React.ReactNode }> = observer(({ c
 
     useEffect(() => {
         if (client && !isAuthorizing && !appInitialization.current) {
+            if (!api_base?.api) return;
             appInitialization.current = true;
 
             api_base.api?.websiteStatus().then((res: TSocketResponseData<'website_status'>) => {
@@ -91,7 +112,7 @@ const CoreStoreProvider: React.FC<{ children: React.ReactNode }> = observer(({ c
                     });
             }, 10000);
         }
-    }, [client, common, isAuthorizing]);
+    }, [client, common, isAuthorizing, is_tmb_enabled]);
 
     const handleMessages = useCallback(
         async (res: Record<string, unknown>) => {
@@ -149,6 +170,22 @@ const CoreStoreProvider: React.FC<{ children: React.ReactNode }> = observer(({ c
             accountInitialization.current = true;
             api_base.api.getSettings().then((settingRes: TSocketResponseData<'get_settings'>) => {
                 client?.setAccountSettings(settingRes.get_settings);
+                const client_information: TClientInformation = {
+                    loginid: activeAccount?.loginid,
+                    email: settingRes.get_settings?.email,
+                    currency: client?.currency,
+                    residence: settingRes.get_settings?.residence,
+                    first_name: settingRes.get_settings?.first_name,
+                    last_name: settingRes.get_settings?.last_name,
+                    preferred_language: settingRes.get_settings?.preferred_language,
+                    user_id: ((api_base.account_info as any)?.user_id as number) || activeLoginid,
+                    landing_company_shortcode: activeAccount?.landing_company_name,
+                };
+
+                Cookies.set('client_information', JSON.stringify(client_information), {
+                    domain: currentDomain,
+                });
+
                 api_base.api
                     .landingCompany({
                         landing_company: settingRes.get_settings?.country_code,

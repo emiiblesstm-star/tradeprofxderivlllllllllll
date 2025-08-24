@@ -8,8 +8,7 @@ type TMainBodyProps = {
 };
 
 const MainBody: React.FC<TMainBodyProps> = ({ children }) => {
-    // Set 'dark' theme by default if nothing is in localStorage
-    const current_theme = localStorage.getItem('theme') ?? 'dark';
+    const current_theme = localStorage.getItem('theme') ?? 'light';
     const { ui } = useStore() ?? {
         ui: {
             setDevice: () => {},
@@ -21,8 +20,6 @@ const MainBody: React.FC<TMainBodyProps> = ({ children }) => {
     useEffect(() => {
         const body = document.querySelector('body');
         if (!body) return;
-
-        // Apply dark or light theme based on the value of current_theme
         if (current_theme === 'light') {
             body.classList.remove('theme--dark');
             body.classList.add('theme--light');

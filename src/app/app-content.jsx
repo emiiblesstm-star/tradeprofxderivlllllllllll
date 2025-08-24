@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { ToastContainer } from 'react-toastify';
+import AuthLoadingWrapper from '@/components/auth-loading-wrapper';
 import useLiveChat from '@/components/chat/useLiveChat';
+import { BOT_RESTRICTED_COUNTRIES_LIST } from '@/components/layout/header/utils';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import { getUrlBase } from '@/components/shared';
 import TncStatusUpdateModal from '@/components/tnc-status-update-modal';
@@ -22,6 +24,7 @@ import { localize } from '@deriv-com/translations';
 import Audio from '../components/audio';
 import BlocklyLoading from '../components/blockly-loading';
 import BotStopped from '../components/bot-stopped';
+import RiskDisclaimer from '../components/risk-disclaimer';
 import BotBuilder from '../pages/bot-builder';
 import Main from '../pages/main';
 import './app.scss';
@@ -31,6 +34,7 @@ import '../components/bot-notification/bot-notification.scss';
 const AppContent = observer(() => {
     const [is_api_initialized, setIsApiInitialized] = React.useState(false);
     const [is_loading, setIsLoading] = React.useState(true);
+    const [is_eu_error_loading, setIsEuErrorLoading] = React.useState(true);
     const store = useStore();
     const { app, transactions, common, client } = store;
     const { showDigitalOptionsMaltainvestError } = app;
@@ -76,6 +80,30 @@ const AppContent = observer(() => {
         html?.setAttribute('lang', current_language.toLowerCase());
         html?.setAttribute('dir', current_language.toLowerCase() === 'ar' ? 'rtl' : 'ltr');
     }, [current_language, html]);
+
+    // Check for EU client error early
+    const is_eu_country = client?.is_eu_country;
+    const clients_logged_out_country_code = client?.clients_country;
+    const clients_logged_in_country_code = client?.account_settings?.country_code;
+    const is_client_logged_in = client?.is_logged_in;
+
+    useEffect(() => {
+        const bot_restricted_countries = BOT_RESTRICTED_COUNTRIES_LIST();
+
+        if (!client.is_logged_in) {
+            // For logged out users
+            if (clients_logged_out_country_code) {
+                const is_restricted = !!bot_restricted_countries[clients_logged_out_country_code];
+                setIsEuErrorLoading(client.is_eu_country && is_restricted);
+            }
+        } else {
+            // For logged in users
+            if (clients_logged_in_country_code) {
+                const is_restricted = !!bot_restricted_countries[clients_logged_in_country_code];
+                setIsEuErrorLoading(is_restricted);
+            }
+        }
+    }, [is_eu_country, clients_logged_out_country_code, clients_logged_in_country_code, is_client_logged_in]);
 
     const handleMessage = React.useCallback(
         ({ data }) => {
@@ -179,9 +207,9 @@ const AppContent = observer(() => {
     if (common?.error) return null;
 
     return is_loading ? (
-        <ChunkLoader message={localize('Initializing your account...')} />
+        <ChunkLoader message={is_eu_error_loading ? '' : localize('Initializing Deriv Bot account...')} />
     ) : (
-        <>
+        <AuthLoadingWrapper>
             <ThemeProvider theme={is_dark_mode_on ? 'dark' : 'light'}>
                 <BlocklyLoading />
                 <div className='bot-dashboard bot' data-testid='dt_bot_dashboard'>
@@ -192,9 +220,10 @@ const AppContent = observer(() => {
                     <TransactionDetailsModal />
                     <ToastContainer limit={3} draggable={false} />
                     <TncStatusUpdateModal />
+                    <RiskDisclaimer />
                 </div>
             </ThemeProvider>
-        </>
+        </AuthLoadingWrapper>
     );
 });
 

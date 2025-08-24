@@ -2,8 +2,11 @@ import { initSurvicate } from '../public-path';
 import { lazy, Suspense } from 'react';
 import React from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import AppLoaderWrapper from '@/components/app-loader/app-loader-wrapper';
+import { getLoaderDuration, isLoaderEnabled } from '@/components/app-loader/loader-config';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import RoutePromptDialog from '@/components/route-prompt-dialog';
+import { getBotsManifest, prefetchAllXmlInBackground } from '@/utils/freebots-cache';
 import { crypto_currencies_display_order, fiat_currencies_display_order } from '@/components/shared';
 import { StoreProvider } from '@/hooks/useStore';
 import CallbackPage from '@/pages/callback';
@@ -39,11 +42,31 @@ const router = createBrowserRouter(
                     </TranslationProvider>
                 </Suspense>
             }
+            errorElement={
+                <div style={{ padding: '20px', textAlign: 'center' }}>
+                    <h1>🚨 Application Error</h1>
+                    <p>Something went wrong. Please check the console for more details.</p>
+                    <button onClick={() => window.location.reload()}>Reload Page</button>
+                </div>
+            }
         >
             {/* All child routes will be passed as children to Layout */}
             <Route index element={<AppRoot />} />
             <Route path='endpoint' element={<Endpoint />} />
             <Route path='callback' element={<CallbackPage />} />
+            {/* Catch-all route for debugging */}
+            <Route
+                path='*'
+                element={
+                    <div style={{ padding: '20px', textAlign: 'center' }}>
+                        <h1>🔍 Route Debug Info</h1>
+                        <p>Current URL: {window.location.href}</p>
+                        <p>Pathname: {window.location.pathname}</p>
+                        <p>Available routes: /, /endpoint, /callback</p>
+                        <button onClick={() => (window.location.href = '/')}>Go to Home</button>
+                    </div>
+                }
+            />
         </Route>
     )
 );
@@ -55,6 +78,23 @@ function App() {
 
         initSurvicate();
         window?.dataLayer?.push({ event: 'page_load' });
+
+        // Prefetch Free Bots XMLs on startup for instant availability
+        // Skip prefetch on very slow connections (2G)
+        const shouldPrefetch = !(navigator as any)?.connection || (navigator as any).connection?.effectiveType !== '2g';
+        if (shouldPrefetch) {
+            setTimeout(async () => {
+                try {
+                    const manifest = (await getBotsManifest()) || [];
+                    if (manifest.length) {
+                        prefetchAllXmlInBackground(manifest.map(m => m.file));
+                    }
+                } catch (e) {
+                    console.warn('Prefetch Free Bots failed', e);
+                }
+            }, 0);
+        }
+
         return () => {
             // Clean up the invalid token handler when the component unmounts
             const survicate_box = document.getElementById('survicate-box');
@@ -115,7 +155,11 @@ function App() {
         }
     }, []);
 
-    return <RouterProvider router={router} />;
+    return (
+        <AppLoaderWrapper duration={getLoaderDuration()} enabled={isLoaderEnabled()}>
+            <RouterProvider router={router} />
+        </AppLoaderWrapper>
+    );
 }
 
 export default App;
