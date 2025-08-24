@@ -16,6 +16,7 @@ import NetworkStatus from './NetworkStatus';
 import ResponsibleTrading from './ResponsibleTrading';
 import ServerTime from './ServerTime';
 import WhatsApp from './WhatsApp';
+import logout from './Logout';
 import './footer.scss';
 
 const Footer = () => {

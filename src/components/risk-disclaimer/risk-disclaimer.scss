@@ -6,7 +6,7 @@
     animation: slide-in-left 0.5s ease-out;
 
     &__btn {
-        background: #3B6FA2 !important; // Navigation bar color
+        background: #620f83 !important; // Navigation bar color
         color: #ffffff !important;
         border: none !important;
         padding: 8px 16px !important;
@@ -17,7 +17,7 @@
         transition: all 0.3s ease !important;
 
         &:hover {
-            background: #2E5A8A !important; // Darker shade on hover
+            background: #620f83 !important; // Darker shade on hover
             transform: translateY(-1px) !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
         }
@@ -52,7 +52,7 @@
     }
 
     &__understand-btn {
-        background: #3B6FA2 !important; // Navigation bar color
+        background: #7c3ba2 !important; // Navigation bar color
         color: #ffffff !important;
         border: none !important;
         padding: 12px 32px !important;
@@ -61,7 +61,7 @@
         min-width: 150px;
 
         &:hover {
-            background: #2E5A8A !important; // Darker shade on hover
+            background: #612e8a !important; // Darker shade on hover
         }
     }
 }
