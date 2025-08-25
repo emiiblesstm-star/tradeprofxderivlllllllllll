@@ -63,14 +63,8 @@ const useMobileMenuConfig = (client?: RootStore['client']) => {
                 RightComponent: <ToggleSwitch value={is_dark_mode_on} onChange={toggleTheme} />,
             },
             {
-                as: 'a',
-                href: 'https://paigey.vercel.app',
-                label: localize('Paigey.com'),
-                LeftComponent: BrandDerivLogoCoralIcon,
-            },
-            {
                           as: 'a',
-                          href: 'https://wa.me/254703699465',
+                          href: 'https://wa.me/2547797990178',
                           label: localize('WhatsApp'),
                           LeftComponent: LegacyWhatsappIcon,
                           target: '_blank',
