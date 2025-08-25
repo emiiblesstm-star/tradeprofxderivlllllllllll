@@ -1,8 +1,8 @@
 <xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
   <variables>
     <variable id="26ogJUrcX0s[kCAcuT)L">Martingale Count</variable>
-    <variable id="mCpxKsASk4(~jlE}R=2m">Prediction</variable>
     <variable id="2VdN?U~eFXg8at^ei}KH">Stake</variable>
+    <variable id="mCpxKsASk4(~jlE}R=2m">Prediction</variable>
     <variable id="}^O6in`s8;f]yrHez@K8">Initial stake</variable>
     <variable id="QA@#.*%2TUm=XWBkVH$v">Take profit</variable>
     <variable id="L)5vdTxBw:o}uuuB0@ri">Stop loss</variable>
@@ -44,92 +44,83 @@
       </block>
     </statement>
     <statement name="INITIALIZATION">
-      <block type="text_print" id="Qaz)~+]b|MXf1P6sGOC[" collapsed="true">
-        <value name="TEXT">
-          <shadow type="text" id="_odVb4FgKqlmm#QS+z%(">
-            <field name="TEXT">Emiisdtrader expert 🚀📊</field>
-          </shadow>
+      <block type="variables_set" id="fiF~)p.yQ)QNn!_v)x6h">
+        <field name="VAR" id="2VdN?U~eFXg8at^ei}KH">Stake</field>
+        <value name="VALUE">
+          <block type="math_number" id="Lt@J`oju7Gg|)tK*DnYv">
+            <field name="NUM">20</field>
+          </block>
         </value>
         <next>
-          <block type="variables_set" id="fiF~)p.yQ)QNn!_v)x6h">
-            <field name="VAR" id="2VdN?U~eFXg8at^ei}KH">Stake</field>
+          <block type="variables_set" id="CMQYgve{_?)}uP1;=[eb">
+            <field name="VAR" id="}^O6in`s8;f]yrHez@K8">Initial stake</field>
             <value name="VALUE">
-              <block type="math_number" id="Lt@J`oju7Gg|)tK*DnYv">
+              <block type="math_number" id="(ByKlLfesX5VSarA6~Pk">
                 <field name="NUM">20</field>
               </block>
             </value>
             <next>
-              <block type="variables_set" id="CMQYgve{_?)}uP1;=[eb">
-                <field name="VAR" id="}^O6in`s8;f]yrHez@K8">Initial stake</field>
+              <block type="variables_set" id="O-jG9|JB}_|DSBN^b@y.">
+                <field name="VAR" id="QA@#.*%2TUm=XWBkVH$v">Take profit</field>
                 <value name="VALUE">
-                  <block type="math_number" id="(ByKlLfesX5VSarA6~Pk">
-                    <field name="NUM">20</field>
+                  <block type="math_number" id="%.)(tlN^O|(=V5tdHhHf">
+                    <field name="NUM">300</field>
                   </block>
                 </value>
                 <next>
-                  <block type="variables_set" id="O-jG9|JB}_|DSBN^b@y.">
-                    <field name="VAR" id="QA@#.*%2TUm=XWBkVH$v">Take profit</field>
+                  <block type="variables_set" id="yZ0zWQ+hs/PC==dH7fTJ">
+                    <field name="VAR" id="L)5vdTxBw:o}uuuB0@ri">Stop loss</field>
                     <value name="VALUE">
-                      <block type="math_number" id="%.)(tlN^O|(=V5tdHhHf">
-                        <field name="NUM">300</field>
+                      <block type="math_number" id="$Z:)K-OT@j4ApAJaxHN[">
+                        <field name="NUM">600</field>
                       </block>
                     </value>
                     <next>
-                      <block type="variables_set" id="yZ0zWQ+hs/PC==dH7fTJ">
-                        <field name="VAR" id="L)5vdTxBw:o}uuuB0@ri">Stop loss</field>
+                      <block type="variables_set" id="5c;K@zHn}@`Q=1j4z7XE">
+                        <field name="VAR" id="mCpxKsASk4(~jlE}R=2m">Prediction</field>
                         <value name="VALUE">
-                          <block type="math_number" id="$Z:)K-OT@j4ApAJaxHN[">
-                            <field name="NUM">600</field>
+                          <block type="math_number" id="s1}?51YkAzNh@hYo!*yO">
+                            <field name="NUM">0</field>
                           </block>
                         </value>
                         <next>
-                          <block type="variables_set" id="5c;K@zHn}@`Q=1j4z7XE">
-                            <field name="VAR" id="mCpxKsASk4(~jlE}R=2m">Prediction</field>
-                            <value name="VALUE">
-                              <block type="math_number" id="s1}?51YkAzNh@hYo!*yO">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="lists_create_with" id="x3tKGqT`-8?c|%QRotgo">
-                                <field name="VARIABLE" id="V:S!;Yf$1/]kV~!Iv)(5">List</field>
-                                <statement name="STACK">
-                                  <block type="lists_statement" id="rBr/3;x/I!/lhkOY#uir" movable="false">
+                          <block type="lists_create_with" id="x3tKGqT`-8?c|%QRotgo">
+                            <field name="VARIABLE" id="V:S!;Yf$1/]kV~!Iv)(5">List</field>
+                            <statement name="STACK">
+                              <block type="lists_statement" id="rBr/3;x/I!/lhkOY#uir" movable="false">
+                                <value name="VALUE">
+                                  <block type="math_number" id="uNH`esBo^}LQ$xM)my4i">
+                                    <field name="NUM">1.8</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="lists_statement" id="ahhg}U|!3Q{-+gs;o`Q3" movable="false">
                                     <value name="VALUE">
-                                      <block type="math_number" id="uNH`esBo^}LQ$xM)my4i">
-                                        <field name="NUM">1.8</field>
+                                      <block type="math_number" id="ulY/_5AI0~82B0sY@+J,">
+                                        <field name="NUM">2.5</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="lists_statement" id="ahhg}U|!3Q{-+gs;o`Q3" movable="false">
+                                      <block type="lists_statement" id=";7kdRBc]g|T[/GEqtgF5" movable="false">
                                         <value name="VALUE">
-                                          <block type="math_number" id="ulY/_5AI0~82B0sY@+J,">
-                                            <field name="NUM">2.5</field>
+                                          <block type="math_number" id="!}s8shPY[WiQ:2M_G[){">
+                                            <field name="NUM">2.56</field>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="lists_statement" id=";7kdRBc]g|T[/GEqtgF5" movable="false">
+                                          <block type="lists_statement" id="fPo;F;}g8KN2#g|Ab$3P" movable="false">
                                             <value name="VALUE">
-                                              <block type="math_number" id="!}s8shPY[WiQ:2M_G[){">
-                                                <field name="NUM">2.56</field>
+                                              <block type="math_number" id="XB1(Z/^G1CjK+ng#7T!#">
+                                                <field name="NUM">2.57</field>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="lists_statement" id="fPo;F;}g8KN2#g|Ab$3P" movable="false">
+                                              <block type="lists_statement" id="$*J2p%hxHw-m*3,b%t,i" movable="false">
                                                 <value name="VALUE">
-                                                  <block type="math_number" id="XB1(Z/^G1CjK+ng#7T!#">
-                                                    <field name="NUM">2.57</field>
+                                                  <block type="math_number" id="FLPmAy;((`2`@S61Nm.6">
+                                                    <field name="NUM">2.58</field>
                                                   </block>
                                                 </value>
-                                                <next>
-                                                  <block type="lists_statement" id="$*J2p%hxHw-m*3,b%t,i" movable="false">
-                                                    <value name="VALUE">
-                                                      <block type="math_number" id="FLPmAy;((`2`@S61Nm.6">
-                                                        <field name="NUM">2.58</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </next>
                                               </block>
                                             </next>
                                           </block>
@@ -137,17 +128,17 @@
                                       </block>
                                     </next>
                                   </block>
-                                </statement>
-                                <next>
-                                  <block type="variables_set" id="ptK(`!|cfE5]%1^un|RE">
-                                    <field name="VAR" id="|rFo%|,pQI8iLC-e8/s^">Martingale</field>
-                                    <value name="VALUE">
-                                      <block type="variables_get" id="r3urEP)Z2,,L$lXn:u1^">
-                                        <field name="VAR" id="V:S!;Yf$1/]kV~!Iv)(5">List</field>
-                                      </block>
-                                    </value>
-                                  </block>
                                 </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="variables_set" id="ptK(`!|cfE5]%1^un|RE">
+                                <field name="VAR" id="|rFo%|,pQI8iLC-e8/s^">Martingale</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="r3urEP)Z2,,L$lXn:u1^">
+                                    <field name="VAR" id="V:S!;Yf$1/]kV~!Iv)(5">List</field>
+                                  </block>
+                                </value>
                               </block>
                             </next>
                           </block>
@@ -212,7 +203,7 @@
       </block>
     </statement>
   </block>
-  <block type="after_purchase" id="7*S[#3rHiegc0m;IhWN." collapsed="true" x="711" y="100">
+  <block type="after_purchase" id="7*S[#3rHiegc0m;IhWN." collapsed="true" x="714" y="96">
     <statement name="AFTERPURCHASE_STACK">
       <block type="variables_set" id="A?ZN}}8]]mU?8e2~f7x.">
         <field name="VAR" id="mCpxKsASk4(~jlE}R=2m">Prediction</field>
