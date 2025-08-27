@@ -71,7 +71,7 @@ const useMobileMenuConfig = (client?: RootStore['client']) => {
             },
             {
                           as: 'a',
-                          href: 'https://t.me/SStarbboyy',
+                          href: 'https://t.me/emiisdtrader',
                           label: localize('Telegram'),
                           LeftComponent: LegacyTelegramIcon,
                           target: '_blank',
