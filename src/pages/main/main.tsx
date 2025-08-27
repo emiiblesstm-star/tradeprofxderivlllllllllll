@@ -43,6 +43,37 @@ const CopyTrading = lazy(() => import('../copy-trading'));
 const SmartTrader = lazy(() => import('../smart-trader'));
 const Dtrader = lazy(() => import('../dtrader'));
 const FreeBots = lazy(() => import('../free-bots/free-bots.tsx')); // Assuming you created free-bots.tsx
+const Analysis = lazy(() => import('../analysis/analysis'));
+const AiPage = lazy(() => import('../ai/ai')); // Assuming you created AiPage.tsx
+const Tool = lazy(() => import('../tool/tool'));
+const SignalPage = lazy(() => import('../signal/signal')); // Assuming you created SignalPage.tsx
+
+const AnalysisToolIcon = () => (
+    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.5 3.5V6.5" stroke="var(--text-general)" stroke-linecap="round"/>
+<path d="M7.5 14.5V18.5" stroke="var(--text-general)" stroke-linecap="round"/>
+<path d="M6.8 6.5C6.08203 6.5 5.5 7.08203 5.5 7.8V13.2C5.5 13.918 6.08203 14.5 6.8 14.5H8.2C8.91797 14.5 9.5 13.918 9.5 13.2V7.8C9.5 7.08203 8.91797 6.5 8.2 6.5H6.8Z" stroke="var(--text-general)"/>
+<path d="M16.5 6.5V11.5" stroke="var(--text-general)" stroke-linecap="round"/>
+<path d="M16.5 16.5V20.5" stroke="var(--text-general)" stroke-linecap="round"/>
+<path d="M15.8 11.5C15.082 11.5 14.5 12.082 14.5 12.8V15.2C14.5 15.918 15.082 16.5 15.8 16.5H17.2C17.918 16.5 18.5 15.918 18.5 15.2V12.8C18.5 12.082 17.918 11.5 17.2 11.5H15.8Z" stroke="var(--text-general)"/>
+</svg>
+);
+
+const AiPageIcon = () => (
+   <svg fill="var(--text-general)" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M20,9.85714286 L20,14.1428571 C20,15.2056811 19.0732946,16 18,16 L6,16 C4.92670537,16 4,15.2056811 4,14.1428571 L4,9.85714286 C4,8.79431889 4.92670537,8 6,8 L18,8 C19.0732946,8 20,8.79431889 20,9.85714286 Z M6,10 L6,14 L18,14 L18,10 L6,10 Z M2,19 L2,17 L22,17 L22,19 L2,19 Z M2,7 L2,5 L22,5 L22,7 L2,7 Z"/>
+</svg>
+);
+
+const ToolIcon = () => (
+   <svg fill="var(--text-general)" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="M10,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,19H5V15H9ZM20,3H14a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,9H15V5h4Zm1,7H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2ZM10,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,10,3ZM9,9H5V5H9Z"/></svg>
+);
+
+const SignalPageIcon = () => (
+    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z" stroke="var(--text-general)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+);
 
 const AppWrapper = observer(() => {
     const { connectionStatus } = useApiBase();
@@ -74,7 +105,7 @@ const AppWrapper = observer(() => {
     const { clear } = summary_card;
     const { DASHBOARD, BOT_BUILDER } = DBOT_TABS;
     const init_render = React.useRef(true);
-    const hash = ['dashboard', 'bot_builder', 'chart', 'free_bots', 'copy_trading', 'smart_trader', 'dtrader'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'free_bots', 'copy_trading', 'smart_trader', 'dtrader','Analysis', 'ai',];
     const { isDesktop } = useDevice();
     const location = useLocation();
     const navigate = useNavigate();
@@ -413,6 +444,38 @@ const AppWrapper = observer(() => {
                                     <Signals />
                                 </Suspense>
                             </div>
+                        <div label={<><AnalysisToolIcon /><Localize i18n_default_text='Analysis Tool' /></>} id='id-analysis-tool'
+                             onClick={() => handleLinkChange('analysis')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading page...')} />}>
+                                <Analysis />
+                            </Suspense>
+                           </div>
+                        <div label={<><AiPageIcon /><Localize i18n_default_text='Expert AI' /></>} id='id-ai'
+                             onClick={() => handleLinkChange('AiPage')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading page...')} />}>
+                                <AiPage />
+                            </Suspense>
+                           </div>
+                        <div label={<><ToolIcon /><Localize i18n_default_text='Pro Tool' /></>} id='id-tool'
+                             onClick={() => handleLinkChange('AiPage')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading page...')} />}>
+                                <Tool />
+                            </Suspense>
+                           </div>
+                        <div label={<><SignalPageIcon /><Localize i18n_default_text='Exp signal' /></>} id='id-signal'
+                             onClick={() => handleLinkChange('signal')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <Suspense fallback={<ChunkLoader message={localize('Please wait, loading page...')} />}>
+                                <SignalPage />
+                            </Suspense>
+                           </div>
                         </Tabs>
                     </div>
                 </div>
